@@ -1,7 +1,7 @@
 import { Container, Profile, Logout } from "./styles";
 import { RiShutDownLine } from 'react-icons/ri'
 import { useAuth } from "../../hooks/auth";
-import {api} from "../../../../api/src/service/api"
+import {api} from "../../service/api"
 import avatarPlaceHolder from '../../assets/profilePlaceHolder.svg';
 
 export function Header(){
