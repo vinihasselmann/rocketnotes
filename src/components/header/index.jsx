@@ -7,7 +7,7 @@ import avatarPlaceHolder from '../../assets/profilePlaceHolder.svg';
 export function Header(){
   const { signOut, user } = useAuth();
 
-  const avatarURL = user.avatar ? `${api.defaults.baseURL}files/${user.avatar}` : avatarPlaceHolder;
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
 
   return (
     <Container>
