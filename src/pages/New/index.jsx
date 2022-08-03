@@ -27,8 +27,16 @@ export function New(){
   const navigate = useNavigate();
 
   function handleAddLink() {
+   
+    if(!newLink) {
+      alert(`você não pode adicionar links sem conteúdo`)
+      return
+    }
 
     setLinks(prevState => [...prevState, newLink]);
+    
+ 
+    
     setNewLink("");
   }
 
@@ -38,6 +46,10 @@ export function New(){
   }
 
   function handleAddTag() {
+    if(!newTag) {
+      alert(`você não pode adicionar tags sem conteúdo`)
+      return
+    }
     setTags(prevState => [...prevState, newTag]);
     setNewTag("");
     
@@ -57,13 +69,17 @@ export function New(){
     if(!title){
       return alert("Digite um título para a sua nota")
     }
+    if(!description){
+      return alert("Digite um conteúdo para a sua nota")
+    }
     if(newLink) {
           return alert(`Voce ainda não adicionou o link "${newLink}"`)
         }
     if(newTag) {
       return alert(`Voce ainda não adicionou a ultima tag "${newTag}"`)
     }
-    
+
+
     await api.post("/notes", {
       title,
       description,
